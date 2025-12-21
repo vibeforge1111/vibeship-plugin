@@ -2,9 +2,9 @@
   "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/schemas/mcp.schema.json",
   "mcpServers": {
     "mind": {
-      "command": "npx",
-      "args": ["-y", "@anthropic-ai/mcp-mind"],
-      "description": "Mind - Local persistent memory across sessions"
+      "command": "mind",
+      "args": ["mcp"],
+      "description": "Mind - Local persistent memory across sessions (requires Mind CLI: https://github.com/anthropics/mind)"
     },
     "spawner": {
       "command": "npx",
