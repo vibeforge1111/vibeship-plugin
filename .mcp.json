@@ -1,16 +1,20 @@
 {
   "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/schemas/mcp.schema.json",
   "mcpServers": {
-    "spawner": {
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "https://mcp.vibeship.co/mcp"],
-      "description": "VibeShip Spawner - Cloud skills, validation, sharp edges, and project memory"
-    },
     "mind": {
       "command": "npx",
       "args": ["-y", "@anthropic-ai/mcp-mind"],
       "description": "Mind - Local persistent memory across sessions"
+    },
+    "spawner": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.vibeship.co/mcp"],
+      "description": "VibeShip Spawner - Cloud skills, validation, and project orchestration"
+    },
+    "scanner": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://scanner.vibeship.co/mcp"],
+      "description": "VibeShip Scanner - Security scanning, CVE/CWE lookup, and vulnerability analysis"
     }
-  },
-  "_comment_scanner": "Scanner MCP endpoint coming soon - will add: scanner.vibeship.co/mcp"
+  }
 }

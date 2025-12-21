@@ -1,0 +1,12 @@
+{
+  "hooks": [
+    {
+      "name": "session-start-memory",
+      "event": "Notification",
+      "matcher": "initialized",
+      "type": "prompt",
+      "prompt": "The session has started. Call mind_recall() to load the user's project context from previous sessions. If context exists, briefly acknowledge what was loaded (project goal, last session summary, pending reminders). If Mind is unavailable, skip silently. Keep output minimal unless there are pending reminders or critical context.",
+      "description": "Automatically load memory context when a session begins"
+    }
+  ]
+}

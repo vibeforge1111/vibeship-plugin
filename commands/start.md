@@ -1,4 +1,5 @@
 ---
+title: Start Session
 description: Start a VibeShip session - loads your project memory and skills
 ---
 

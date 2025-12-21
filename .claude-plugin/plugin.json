@@ -1,13 +1,14 @@
 {
   "name": "vibeship",
   "version": "1.0.0",
-  "description": "AI-powered development with persistent memory, specialist skills, and guardrails. Build products faster with an AI that remembers your project.",
+  "description": "AI-powered development with persistent memory, specialist skills, and security scanning. Build products faster with an AI that remembers your project.",
   "author": {
     "name": "VibeShip",
     "url": "https://vibeship.co"
   },
   "homepage": "https://vibeship.co",
-  "repository": "https://github.com/vibeship/vibeship-plugin",
+  "repository": "https://github.com/vibeforge1111/vibeship-plugin",
+  "license": "Apache-2.0",
   "keywords": [
     "vibe-coding",
     "memory",
@@ -15,15 +16,19 @@
     "mcp",
     "product-building",
     "ai-development",
-    "guardrails"
+    "security",
+    "scanning"
   ],
-  "license": "MIT",
   "engines": {
     "claude-code": ">=2.0.0"
   },
   "categories": [
     "productivity",
     "development",
-    "ai"
-  ]
+    "ai",
+    "security"
+  ],
+  "commands": "./commands/",
+  "hooks": "./hooks/hooks.json",
+  "mcpServers": "./.mcp.json"
 }

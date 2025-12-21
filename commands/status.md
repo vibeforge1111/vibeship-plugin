@@ -1,4 +1,5 @@
 ---
+title: Check Status
 description: Check what VibeShip remembers about your project and current session
 ---
 

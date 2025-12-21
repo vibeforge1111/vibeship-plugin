@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "mascot": true,
+  "self_improve": {
+    "enabled": true,
+    "decay": true,
+    "reinforcement": true,
+    "contradiction": true,
+    "learning_style": true
+  },
+  "experimental": {}
+}

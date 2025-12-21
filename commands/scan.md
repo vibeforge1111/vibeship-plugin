@@ -1,4 +1,5 @@
 ---
+title: Security Scan
 description: Run a security scan on your project or a GitHub repository
 ---
 

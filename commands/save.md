@@ -1,4 +1,5 @@
 ---
+title: Save Memory
 description: Save a decision, learning, or progress update to your project memory
 ---
 

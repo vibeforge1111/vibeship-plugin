@@ -1,0 +1,16 @@
+{
+  "name": "vibeforge1111",
+  "description": "VibeShip plugins for AI-powered development with persistent memory, specialist skills, and security scanning.",
+  "owner": {
+    "name": "VibeShip",
+    "url": "https://github.com/vibeforge1111"
+  },
+  "plugins": [
+    {
+      "name": "vibeship",
+      "source": "./",
+      "description": "AI-powered development with persistent memory (Mind), specialist skills (Spawner), and security scanning (Scanner). Build products faster with an AI that remembers your project.",
+      "version": "1.0.0"
+    }
+  ]
+}
