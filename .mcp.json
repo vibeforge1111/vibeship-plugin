@@ -9,12 +9,12 @@
     "spawner": {
       "command": "npx",
       "args": ["-y", "mcp-remote", "https://mcp.vibeship.co/mcp"],
-      "description": "VibeShip Spawner - Cloud skills, validation, and project orchestration"
+      "description": "Vibeship Spawner - Cloud skills, validation, and project orchestration"
     },
     "scanner": {
       "command": "npx",
       "args": ["-y", "mcp-remote", "https://scanner.vibeship.co/mcp"],
-      "description": "VibeShip Scanner - Security scanning, CVE/CWE lookup, and vulnerability analysis"
+      "description": "Vibeship Scanner - Security scanning, CVE/CWE lookup, and vulnerability analysis"
     }
   }
 }

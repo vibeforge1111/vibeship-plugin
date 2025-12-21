@@ -1,11 +1,11 @@
 ---
 title: Start Session
-description: Start a VibeShip session - loads your project memory and skills
+description: Start a Vibeship session - loads your project memory and skills
 ---
 
-# VibeShip Session Start
+# Vibeship Session Start
 
-You are starting a VibeShip-powered development session. Follow these steps:
+You are starting a Vibeship-powered development session. Follow these steps:
 
 ## Step 1: Load Memory Context
 
@@ -49,3 +49,26 @@ Remind the user they can:
 - Just start building - you'll handle the rest
 
 Keep it conversational and helpful. This is the start of a productive session!
+
+## Handling Connection Issues
+
+### If Mind MCP fails:
+```
+Memory couldn't load. This session won't have context from previous sessions.
+To fix: Check that 'mind' CLI is installed and in your PATH.
+```
+Proceed without memory - the session can still work, just without persistence.
+
+### If Spawner MCP fails:
+```
+Couldn't connect to Spawner for skills. Working in basic mode.
+Skills will load when connection is restored.
+```
+Proceed without skills - core Claude capabilities still work.
+
+### If both fail:
+Let the user know, but don't block them:
+```
+Vibeship services are temporarily unavailable. You can still code normally.
+Memory and skills will sync when services reconnect.
+```

@@ -1,20 +1,38 @@
-# VibeShip Plugin for Claude Code
+# Vibeship Plugin for Claude Code
 
-AI-powered development with persistent memory, specialist skills, and security scanning.
+**Ship faster with an AI that actually remembers your project.**
 
-## What This Plugin Does
+Stop re-explaining your codebase every session. Vibeship gives Claude Code persistent memory, specialist skills for your stack, and security scanning - all in one install.
 
-**Memory** - Claude remembers your project across sessions. Decisions, learnings, problems, and progress are all saved automatically.
+## Why Vibeship?
 
-**Skills** - Claude loads specialized knowledge for your tech stack. Building with Next.js + Supabase? It knows the gotchas.
+You're vibe coding - shipping fast, iterating quickly, building products. But every new Claude session starts from zero. You waste time re-explaining decisions, re-discovering gotchas, re-learning your own codebase.
 
-**Security** - Scan your code for vulnerabilities. Get AI-generated fixes for what's found.
+**Vibeship fixes this.**
 
-## Installation
+- **Memory** - Claude remembers your project across sessions. Decisions, learnings, problems - all persisted.
+- **Skills** - Claude loads specialized knowledge for your stack. Next.js + Supabase? It knows the sharp edges.
+- **Security** - Scan for vulnerabilities before you ship. Get AI-generated fixes.
 
-Copy this plugin folder to your Claude Code plugins directory:
+## Quick Start (2 minutes)
+
+### Option 1: Marketplace Install (Recommended)
 
 ```bash
+# Add the Vibeship marketplace
+claude plugin marketplace add vibeforge1111/vibeship-plugin
+
+# Install the plugin
+claude plugin install vibeship@vibeforge1111
+```
+
+### Option 2: Manual Install
+
+```bash
+# Clone the repo
+git clone https://github.com/vibeforge1111/vibeship-plugin.git
+
+# Copy to plugins directory
 # macOS/Linux
 cp -r vibeship-plugin ~/.claude/plugins/
 
@@ -22,12 +40,12 @@ cp -r vibeship-plugin ~/.claude/plugins/
 xcopy vibeship-plugin %USERPROFILE%\.claude\plugins\vibeship-plugin /E /I
 ```
 
-Restart Claude Code. The plugin loads automatically.
+Restart Claude Code. You're ready to ship.
 
 ## Slash Commands
 
 ### `/vibeship-start`
-Start a VibeShip session. Loads your project memory and greets you with context.
+Start a Vibeship session. Loads your project memory and greets you with context.
 
 ### `/vibeship-save`
 Save something important to memory:
@@ -95,15 +113,18 @@ npx -y mcp-remote https://mcp.vibeship.co/mcp
 ### Memory not persisting
 Make sure the `.mind/` folder is writable. Check `mind_status()` for health info.
 
-### Scanner not available
-The Scanner MCP endpoint is coming soon. For now, use the web interface at scanner.vibeship.co.
+### Scanner authentication for private repos
+Run `/vibeship-scan` and follow the auth flow to scan private repositories.
+
+### Mind CLI not found
+Mind requires separate installation. See: https://github.com/anthropics/mind
 
 ## Support
 
-- Issues: https://github.com/vibeship/vibeship-plugin/issues
+- Issues: https://github.com/vibeforge1111/vibeship-plugin/issues
 - Docs: https://vibeship.co/docs
 - Discord: https://discord.gg/vibeship
 
 ## License
 
-MIT
+Apache 2.0 - See [LICENSE](LICENSE) file.

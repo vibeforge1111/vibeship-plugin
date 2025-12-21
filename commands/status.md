@@ -1,9 +1,9 @@
 ---
 title: Check Status
-description: Check what VibeShip remembers about your project and current session
+description: Check what Vibeship remembers about your project and current session
 ---
 
-# VibeShip Status Check
+# Vibeship Status Check
 
 The user wants to see what's being remembered about their project. Show them a clear overview.
 

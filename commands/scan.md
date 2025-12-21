@@ -3,7 +3,7 @@ title: Security Scan
 description: Run a security scan on your project or a GitHub repository
 ---
 
-# VibeShip Security Scan
+# Vibeship Security Scan
 
 The user wants to scan code for security vulnerabilities. Help them run a comprehensive scan.
 
@@ -80,15 +80,16 @@ Based on results, offer to:
 - Get AI-generated fixes: `scanner_get_fix`
 - Generate master fix prompt: `scanner_master_prompt`
 
-## Handling No Scanner MCP
+## Handling MCP Connection Issues
 
 If scanner tools aren't available (MCP not connected):
 
 ```
-Scanner isn't connected yet. You can:
-1. Wait for the Scanner MCP endpoint (coming soon)
-2. Run Opengrep locally: `npx opengrep scan .`
-3. Visit scanner.vibeship.co to scan your GitHub repo directly
+Scanner MCP isn't connected. Try these alternatives:
+1. Check connection: Run `claude mcp list` to verify scanner is connected
+2. Run locally: `npx opengrep scan .` for SAST scanning
+3. Web interface: Visit scanner.vibeship.co to scan your GitHub repo directly
+4. Restart Claude Code to reconnect MCP servers
 ```
 
 ## Remember the Results
