@@ -52,23 +52,72 @@ Keep it conversational and helpful. This is the start of a productive session!
 
 ## Handling Connection Issues
 
+Always provide **actionable guidance**, not just error messages.
+
 ### If Mind MCP fails:
+
 ```
-Memory couldn't load. This session won't have context from previous sessions.
-To fix: Check that 'mind' CLI is installed and in your PATH.
+## Memory Unavailable
+
+**What's happening:** I can't connect to your local memory service.
+
+**What this means for you:**
+- I won't remember decisions from previous sessions
+- This session still works, just without history
+- Nothing is lost - your `.mind/` folder is still there
+
+**How to fix it (pick one):**
+1. **Quick fix:** Restart Claude Code (often resolves connection issues)
+2. **Check installation:** Run `mind --version` in terminal
+3. **Reinstall:** `npm install -g @anthropic/mind`
+
+**Want to continue anyway?** I can still help you code - just tell me what you're working on!
 ```
+
 Proceed without memory - the session can still work, just without persistence.
 
 ### If Spawner MCP fails:
+
 ```
-Couldn't connect to Spawner for skills. Working in basic mode.
-Skills will load when connection is restored.
+## Skills Unavailable
+
+**What's happening:** I can't reach the Vibeship skills server.
+
+**What this means for you:**
+- I won't have specialist knowledge for your stack
+- Core Claude capabilities work perfectly
+- No data is lost
+
+**How to fix it (pick one):**
+1. **Check internet:** Can you reach other websites?
+2. **Test connection:** `curl https://mcp.vibeship.co/health`
+3. **Restart:** Close and reopen Claude Code
+
+**Want to continue anyway?** I'm still a capable coding assistant - let's build!
 ```
+
 Proceed without skills - core Claude capabilities still work.
 
 ### If both fail:
-Let the user know, but don't block them:
+
 ```
-Vibeship services are temporarily unavailable. You can still code normally.
-Memory and skills will sync when services reconnect.
+## Vibeship Services Unavailable
+
+**What's happening:** Neither memory nor skills services are connecting.
+
+**What this means:**
+- You can still code normally with Claude
+- Memory won't persist this session
+- Specialist skills won't load
+
+**Quick troubleshooting:**
+1. Check internet connection
+2. Run `claude mcp list` to see MCP status
+3. Restart Claude Code
+
+**The most common fix:** Simply restart Claude Code. This resolves 90% of connection issues.
+
+**Ready to work anyway?** Just tell me what you're building!
 ```
+
+Never block the user - always offer a path forward.

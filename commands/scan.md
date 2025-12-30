@@ -80,16 +80,122 @@ Based on results, offer to:
 - Get AI-generated fixes: `scanner_get_fix`
 - Generate master fix prompt: `scanner_master_prompt`
 
-## Handling MCP Connection Issues
+## Handling Errors
 
-If scanner tools aren't available (MCP not connected):
+### If Scanner MCP isn't connected:
 
 ```
-Scanner MCP isn't connected. Try these alternatives:
-1. Check connection: Run `claude mcp list` to verify scanner is connected
-2. Run locally: `npx opengrep scan .` for SAST scanning
-3. Web interface: Visit scanner.vibeship.co to scan your GitHub repo directly
-4. Restart Claude Code to reconnect MCP servers
+## Scanner Unavailable
+
+**What happened:** Can't connect to the security scanning service.
+
+**You have alternatives!**
+
+| Option | How | Best For |
+|--------|-----|----------|
+| **Local SAST** | `npx opengrep scan .` | Quick code analysis |
+| **Dependency check** | `npm audit` or `trivy fs .` | Known vulnerabilities |
+| **Web scanner** | Visit scanner.vibeship.co | Full GitHub repo scan |
+| **Restart** | Close/reopen Claude Code | Connection issues |
+
+**Want me to run a local scan instead?** I can use opengrep or npm audit right now.
+```
+
+### If scan takes too long:
+
+```
+## Scan Still Running
+
+**Scan ID:** [id]
+**Started:** [time ago]
+**Status:** Processing...
+
+**Large repos take longer.** Here's what's happening:
+1. Cloning repository
+2. Running security analyzers (opengrep, trivy, gitleaks)
+3. Aggregating results
+
+**While you wait:**
+- Continue coding - I'll notify you when done
+- Check status: `/vibeship-scan status [id]`
+- Cancel if needed: `/vibeship-scan cancel [id]`
+
+**Typical scan times:**
+- Small repo (<1000 files): 1-2 minutes
+- Medium repo: 3-5 minutes
+- Large repo: 10+ minutes
+```
+
+### If scan finds nothing:
+
+```
+## No Vulnerabilities Found
+
+**Great news!** The scan completed with no security issues detected.
+
+**What was checked:**
+- Static code analysis (opengrep)
+- Dependency vulnerabilities (trivy)
+- Secret detection (gitleaks)
+- npm audit findings
+
+**Keep in mind:**
+- Automated scans catch common issues
+- They don't find everything
+- Consider manual security review for sensitive code
+
+**Confidence level:** High for known patterns, moderate for logic flaws.
+```
+
+### If scan finds critical issues:
+
+```
+## Critical Vulnerabilities Found
+
+**Action Required!** Found [X] critical security issues.
+
+### Top Priority Fixes:
+
+| # | Issue | File | Impact |
+|---|-------|------|--------|
+| 1 | SQL Injection | db/query.js:42 | Data breach risk |
+| 2 | Hardcoded secret | config.js:15 | Credential exposure |
+
+### Immediate Steps:
+
+1. **Don't deploy** until these are fixed
+2. **Rotate any exposed secrets** immediately
+3. Ask me: "Help me fix the SQL injection in db/query.js"
+
+### Get Help:
+
+- `/vibeship-scan fix 1` - AI-generated fix for issue #1
+- `/vibeship-scan explain [CWE-ID]` - Learn about the vulnerability type
+- "Review my auth code for security issues" - Manual review
+
+**I can help fix each issue.** Which one should we tackle first?
+```
+
+### If repo URL is invalid:
+
+```
+## Invalid Repository
+
+**Couldn't access:** [url]
+
+**This might be because:**
+- The URL has a typo
+- The repo is private (scanner needs public access)
+- The repo doesn't exist
+
+**For private repos:**
+1. Make sure the repo exists on GitHub
+2. Check if it's set to public
+3. Or push to a public fork for scanning
+
+**Correct format:** `https://github.com/owner/repo`
+
+**Want to scan the current local project instead?**
 ```
 
 ## Remember the Results

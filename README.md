@@ -44,6 +44,12 @@ Restart Claude Code. You're ready to ship.
 
 ## Slash Commands
 
+### `/vibeship-init`
+**Start here for new projects.** Your magic first moment with Vibeship:
+- Detects your existing codebase and tech stack
+- Sets up memory for your project
+- Gets you productive in under 60 seconds
+
 ### `/vibeship-start`
 Start a Vibeship session. Loads your project memory and greets you with context.
 
